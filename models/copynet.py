@@ -79,11 +79,11 @@ class CopyDecoder(nn.Module):
 		score_c = score_c.view(b,-1,hidden_size) # [b x seq x hidden_size]
 		score_c = torch.bmm(score_c, state.unsqueeze(2)).squeeze() # [b x seq]
 
- 		# 2-3) get mask of encoded input to obtain attention for each row that doesn't include attention from padding
+ 		# 2-3) get mask of encoded input so that we don't attend zero-padded regions
 		encoded_mask = torch.Tensor(np.array(encoded_idx!=0, dtype=float)) # [b x seq]
 		encoded_mask = self.to_cuda(encoded_mask)
 		encoded_mask = Variable(encoded_mask)
-		score_c = score_c * encoded_mask # padded parts now have 0 attention
+		score_c = score_c * encoded_mask # padded parts now are now 0
 
 		# 2-4) get tensor that shows whether each decoder input has previously appeared in the encoder
 		idx_from_input = []
@@ -93,6 +93,8 @@ class CopyDecoder(nn.Module):
 		# idx_from_input : np.array of [b x seq]
 		idx_from_input = self.to_cuda(idx_from_input)
 		idx_from_input = Variable(idx_from_input)
+		# remove scores which are obsolete
+		score_c = score_c * idx_from_input # 0 if the decoder input hasn't been introduced in the input
 
 		# 2-5) get softmax-ed probabilities
 		score = torch.cat([score_g,score_c],1) # [b x (vocab+seq)]
@@ -114,6 +116,7 @@ class CopyDecoder(nn.Module):
 
 		# 3. get weighted attention to use for predicting next word
 		# 3-1) multiply with scores_c to get final weighted representation
+		# attn = prob_c * idx_from_input
 		attn = prob_c * idx_from_input
 		for i in range(b):
 			tmp_sum = attn[i].sum()
