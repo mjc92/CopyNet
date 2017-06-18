@@ -1,0 +1,13 @@
+list of copynet data
+
+1. copynet_data_v1.txt
+  - 1s (len: 1~4) + 3~100 (len: 4) + 0s (len: 1~4)
+  - aXb -> X
+
+2. copynet_data_v2.txt
+  - 2~100 (len: 1~4) + 2~100 (len: 4) + 1~100s (len: 1~4)
+  - aXb -> cXd
+
+   a x b -> f x g
+   a x b -> c x d
+   a y b -> c y d
