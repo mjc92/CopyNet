@@ -58,11 +58,6 @@ class CopyDecoder(nn.Module):
 			weighted = self.to_cuda(weighted)
 			weighted = Variable(weighted)
 
-			self.attention = []
-			self.W = []
-			self.attn = []
-			self.probs = []
-			self.prob_c_to_g = []
 		prev_state = prev_state.unsqueeze(0) # [1 x b x hidden]
 
 		# 1. update states
@@ -71,21 +66,47 @@ class CopyDecoder(nn.Module):
 		state = state.squeeze() # [b x h]
 
 		# 2. predict next word y_t
-		# 2-1) get scores for generation- mode
+		# 2-1) get scores score_g for generation- mode
 		score_g = self.Wo(state) # [b x vocab_size]
 
-		# 2-2) get basic score_c that includes attention for padded values
-		score_c = self.nonlinear(self.Wc(encoded.contiguous().view(-1,hidden_size*2))) # [b*seq x hidden_size]
+		# 2-2) get scores score_c for copy mode, remove possibility of giving attention to padded values
+		score_c = F.tanh(self.Wc(encoded.contiguous().view(-1,hidden_size*2))) # [b*seq x hidden_size]
 		score_c = score_c.view(b,-1,hidden_size) # [b x seq x hidden_size]
 		score_c = torch.bmm(score_c, state.unsqueeze(2)).squeeze() # [b x seq]
-
- 		# 2-3) get mask of encoded input so that we don't attend zero-padded regions
-		encoded_mask = torch.Tensor(np.array(encoded_idx!=0, dtype=float)) # [b x seq]
+		encoded_mask = torch.Tensor(np.array(encoded_idx==0, dtype=float)*(-1000)) # [b x seq]
 		encoded_mask = self.to_cuda(encoded_mask)
 		encoded_mask = Variable(encoded_mask)
-		score_c = score_c * encoded_mask # padded parts now are now 0
+		score_c = score_c + encoded_mask # padded parts will get close to 0 when applying softmax
+		score_c = F.tanh(score_c) # purely optional....
+		# 2-3) get softmax-ed probabilities
+		score = torch.cat([score_g,score_c],1) # [b x (vocab+seq)]
+		probs = F.softmax(score)
+		prob_g = probs[:,:vocab_size] # [b x vocab]
+		prob_c = probs[:,vocab_size:] # [b x seq]
+		# remove scores which are obsolete
 
-		# 2-4) get tensor that shows whether each decoder input has previously appeared in the encoder
+		# 2-4) add prob_c to prob_g
+		prob_c_to_g = self.to_cuda(torch.Tensor(b,vocab_size).zero_())
+		prob_c_to_g = Variable(prob_c_to_g)
+		for b_idx in range(b): # for each sequence in batch
+			for s_idx in range(seq):
+				prob_c_to_g[b_idx,encoded_idx[b_idx,s_idx]]=prob_c_to_g[b_idx,encoded_idx[b_idx,s_idx]]+prob_c[b_idx,s_idx]
+
+
+		# prob_c_to_g = Variable
+		# en = torch.LongTensor(encoded_idx)
+		# en.unsqueeze_(2)
+		# one_hot = torch.FloatTensor(en.size(0),en.size(1),vocab_size).zero_()
+		# one_hot.scatter_(2,en,1) # one hot tensor: [b x seq x vocab]
+		# one_hot = self.to_cuda(one_hot)
+		# prob_c_to_g = torch.bmm(prob_c.unsqueeze(1),Variable(one_hot)) # [b x 1 x vocab]
+		# prob_c_to_g = prob_c_to_g.squeeze() # [b x vocab]
+		out = prob_g + prob_c_to_g
+		out = out.unsqueeze(1) # [b x 1 x vocab]
+
+
+		# 3. get weighted attention to use for predicting next word
+		# 3-1) get tensor that shows whether each decoder input has previously appeared in the encoder
 		idx_from_input = []
 		for i,j in enumerate(encoded_idx):
 			idx_from_input.append([int(k==input_idx[i].data[0]) for k in j])
@@ -93,39 +114,17 @@ class CopyDecoder(nn.Module):
 		# idx_from_input : np.array of [b x seq]
 		idx_from_input = self.to_cuda(idx_from_input)
 		idx_from_input = Variable(idx_from_input)
-		# remove scores which are obsolete
-		score_c = score_c * idx_from_input # 0 if the decoder input hasn't been introduced in the input
-
-		# 2-5) get softmax-ed probabilities
-		score = torch.cat([score_g,score_c],1) # [b x (vocab+seq)]
-		probs = F.softmax(score)
-		prob_g = probs[:,:vocab_size] # [b x vocab]
-		prob_c = probs[:,vocab_size:] # [b x seq]
-		# 2-6) add prob_c to prob_g
-		en = torch.LongTensor(encoded_idx)
-		en.unsqueeze_(2)
-		one_hot = torch.FloatTensor(en.size(0),en.size(1),vocab_size).zero_()
-		one_hot.scatter_(2,en,1) # one hot tensor: [b x seq x vocab]
-		one_hot = self.to_cuda(one_hot)
-		prob_c_to_g = torch.bmm(prob_c.unsqueeze(1),Variable(one_hot)) # [b x 1 x vocab]
-		prob_c_to_g = prob_c_to_g.squeeze() # [b x vocab]
-		out = prob_g + prob_c_to_g
-		out = out.unsqueeze(1) # [b x 1 x vocab]
-		self.probs.append(probs)
-		self.prob_c_to_g.append(prob_c_to_g)
-
-		# 3. get weighted attention to use for predicting next word
-		# 3-1) multiply with scores_c to get final weighted representation
-		# attn = prob_c * idx_from_input
-		attn = prob_c * idx_from_input
 		for i in range(b):
-			tmp_sum = attn[i].sum()
-			if (tmp_sum.data[0]>0.0):
-				attn[i] = attn[i] / tmp_sum.data[0]
-		self.attn.append(attn)
+			if idx_from_input[i].sum().data[0]>1:
+				idx_from_input[i] = idx_from_input[i]/idx_from_input[i].sum().data[0]
+		# 3-2) multiply with prob_c to get final weighted representation
+		attn = prob_c * idx_from_input
+		# for i in range(b):
+		# 	tmp_sum = attn[i].sum()
+		# 	if (tmp_sum.data[0]>1e-6):
+		# 		attn[i] = attn[i] / tmp_sum.data[0]
 		attn = attn.unsqueeze(1) # [b x 1 x seq]
 		weighted = torch.bmm(attn, encoded) # weighted: [b x 1 x hidden*2]
-		self.W.append(weighted)
 		return out, state, weighted
 
 	def to_cuda(self, tensor):
