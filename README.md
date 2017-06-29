@@ -22,7 +22,8 @@ python train.py
 ```
 
 ## Examples
-> [INPUT]
+```Python
+[INPUT]
 self . keyOrder . append ( key )
 [GROUND TRUTH]
 # append key to self . keyOrder .
@@ -63,3 +64,4 @@ templatetags_modules_candidates + = [ ' % s . templatetags ' % app_config . name
 # add string ' % s . templatetags ' to a list , where ' % s ' is replaced with app_config . name ,
 [PREDICTED]
 # append string ' % s . name ' to a list , append it to a list , append it to a list , append it to a list
+```
