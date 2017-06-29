@@ -6,25 +6,17 @@
 
 ## About
 
-A PyTorch implementation of Max-Margin Object Detection by Kenta Iwasaki. The original paper author is Davis E. King.
+A PyTorch implementation of CopyNet by Minje Choi.
 
 ## Observations & Results
 
-To be tested; implementation is almost finished.
+Tested on Django
+- 19,000 lines of source code <-> annotation pairs
+- task: generate comments / annotations from source code lines
 
-## Dataset Preparation
-
-Labels for the model should be represented as a 3D array that follows the shape (num. images, num. labels per image, 5) where the final dimension represents label attributes `(left, top, right, bottom, class)`.
-Images for the model should be represented as a 4D array that follows the shape (num. images, 256, 256, 3). Image specifications may easily be changed later, especially after spatial pyramid pooling is implemented to allow for variable length images.
 
 ## How To Run
 
 ```
-pip install http://download.pytorch.org/whl/cu80/torch-0.1.12.post2-cp35-cp35m-linux_x86_64.whl
-pip install torchvision
-python model.py
+python train.py
 ```
-
-## Citations
-
-King, D. E. (2015). Max-margin object detection. arXiv preprint arXiv:1502.00046.
