@@ -12,8 +12,12 @@ A PyTorch implementation of CopyNet by Minje Choi.
 
 Tested on Django
 - 19,000 lines of source code <-> annotation pairs
-- task: generate comments / annotations from source code lines
 
+## Task
+Generating human-like comments from raw source code lines
+- includes identifier/class/function name
+- number of arguments for a function method
+- describes what the function does
 
 ## How To Run
 
