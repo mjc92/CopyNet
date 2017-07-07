@@ -1,0 +1,1462 @@
+
+===================================================================
+Input1:       var st=(typeofthis.options.start=='string'?this.options.start:$(this.options.start)
+Output:       (typeofthis.options.end    'string'?this.options.end:$(this.options.end).val
+Predict[UNK]: this.options.clone.slice(0,0).-1;
+Predicted:    this.options.clone.slice(0,0).-1;
+
+===================================================================
+Input1:       var uint32Array=this.uint32Array;
+Input2:       var tint
+Output:       (target.tint>>16)+(target.tint&0xff00)+((target.tint&0xff)<<16
+Predict[UNK]: this.tint;
+Predicted:    this.tint;
+
+===================================================================
+Input1:       var end=data.end||Date.create('now').format(Date.ISO8601_DATETIME);
+Input2:       var begin
+Output:       data.begin||Date.create(end).rewind(weeks:6).format(Date.ISO8601_DATETIME);
+Predict[UNK]: Date.end||Date.create();
+Predicted:    Date.end||Date.create();
+
+===================================================================
+Input1:       var td=document.createElement('td');
+Input2:       tr.appendChild(td);
+Input2:       var input
+Output:       document.createElement('input');input.setAttribute('id',col+row);
+Predict[UNK]: document.getElementById('input');
+Predicted:    document.getElementById('input');
+
+===================================================================
+Input1:       var b=newSymbolNode('b');
+Input2:       var add
+Output:       newOperatorNode('+','add',[a,b]);
+Predict[UNK]: newOperatorNode('*','multiply',[a,b]);
+Predicted:    newOperatorNode('*','multiply',[a,b]);
+
+===================================================================
+Input1:       var elementIndex=directiveRecord.directiveIndex.elementIndex;
+Input2:       var t
+Output:       newBindingTarget(DIRECTIVE,elementIndex,propertyName,null,ast.toString());
+Predict[UNK]: Math.floor(this.t).attr(fill:elementIndex,elementIndex:').attr('data-t-list-
+Predicted:    Math.floor(this.t).attr(fill:elementIndex,elementIndex:').attr('data-t-list-
+
+===================================================================
+Input1:       var _strlen=Module["_strlen"]=asm["_strlen"];
+Input2:       var _im_reset_search
+Output:       Module["_im_reset_search"]   asm["_im_reset_search"];
+Predict[UNK]: Module["_<UNK>"]   asm["_<UNK>"];
+Predicted:    Module["_im_reset_search"]   asm["_im_reset_search"];
+***CORRECT***
+
+===================================================================
+Input1:       var up=$(this).hasClass("th-sort-up");
+Input2:       var down
+Output:       $(this).hasClass("th-sort-down");
+Predict[UNK]: $(this).data("<UNK>");
+Predicted:    $(this).data("down");
+
+===================================================================
+Input1:       var width=parsePercent(detailModel.get('width'),posInfo.r);
+Input2:       var height
+Output:       parsePercent(detailModel.get('height'),posInfo.r);
+Predict[UNK]: <UNK>(<UNK>.height,posInfo.height);
+Predicted:    detailModel(detailModel.height,posInfo.height);
+
+===================================================================
+Input1:       var score=scores[k].score;
+Input2:       var li
+Output:       createElement('li',initials+':'+score);
+Predict[UNK]: <UNK>[score].li;
+Predicted:    scores[score].li;
+
+===================================================================
+Input1:       var bearing=window.plugin.distanceToPortal.currentLoc.bearingTo(ll);
+Input2:       var bearingWord
+Output:       window.plugin.distanceToPortal.currentLoc.bearingWordTo(ll);
+Predict[UNK]: window.<UNK>.<UNK>.<UNK>();
+Predicted:    window.bearingWord.distanceToPortal.bearingWord();
+
+===================================================================
+Input1:       var path=require('path')var dir
+Output:       path.join(__dirname,'my_node_modules')
+Predict[UNK]: path.resolve(__dirname,'fixtures','fixtures')
+Predicted:    path.resolve(__dirname,'fixtures','fixtures')
+
+===================================================================
+Input1:       var attributeType=this.attribute('attributeType').value;
+Input2:       var attributeName
+Output:       this.attribute('attributeName').value;
+Predict[UNK]: this.attributeName;
+Predicted:    this.attributeName;
+
+===================================================================
+Input1:       var _pb=241;
+Input2:       values[_pb]=_pb;
+Input2:       var _pc
+Output:       242;values[_pc]   _pc;
+Predict[UNK]: 16;values[_pc]   _pc;
+Predicted:    16;values[_pc]   _pc;
+
+===================================================================
+Input1:       var cleanup=this.newBlock('forcleanup');
+Input2:       var end
+Output:       this.newBlock('forend');
+Predict[UNK]: this.newBlock('end');
+Predicted:    this.newBlock('end');
+
+===================================================================
+Input1:       var clientTop=docElem.clientTop||body.clientTop||0;
+Input2:       var clientLeft
+Output:       docElem.clientLeft||body.clientLeft||0;
+Predict[UNK]: docElem.clientLeft||(body.clientLeft||0)||body.clientLeft||0;
+Predicted:    docElem.clientLeft||(body.clientLeft||0)||body.clientLeft||0;
+
+===================================================================
+Input1:       var payload=data['payload'];
+Input2:       var service
+Output:       this.getService(serviceName,payload);
+Predict[UNK]: data['service'];
+Predicted:    data['service'];
+
+===================================================================
+Input1:       var x=intersectInfo._localPickPosition.x-w;
+Input2:       var y
+Output:       intersectInfo._localPickPosition.y-h;
+Predict[UNK]: <UNK>.y+w-y;
+Predicted:    intersectInfo.y+w-y;
+
+===================================================================
+Input1:       var buffer=require('vinyl-buffer');
+Input2:       var connect
+Output:       require('gulp-connect');
+Predict[UNK]: require('gulp-connect');
+Predicted:    require('gulp-connect');
+***CORRECT***
+
+===================================================================
+Input1:       var uglify=require('gulp-uglify');
+Input2:       var sourcemaps
+Output:       require('gulp-sourcemaps');
+Predict[UNK]: require('gulp-sourcemaps');
+Predicted:    require('gulp-sourcemaps');
+***CORRECT***
+
+===================================================================
+Input1:       var keyValue=keyValues[i];
+Input2:       var value
+Output:       keyValue.value(self,locals);
+Predict[UNK]: keyValue['value'];
+Predicted:    keyValue['value'];
+
+===================================================================
+Input1:       var parent=plugin.getElement("parent");
+Input2:       var btn1
+Output:       plugin.getElement("btn1");
+Predict[UNK]: plugin.<UNK>.<UNK>("<UNK>");
+Predicted:    plugin.btn1.btn1("btn1");
+
+===================================================================
+Input1:       var deepPurpleA200=exports.deepPurpleA200='#7c4dff';
+Input2:       var deepPurpleA400
+Output:       exports.deepPurpleA400   '#651fff';
+Predict[UNK]: exports.<UNK>   '#';
+Predicted:    exports.deepPurpleA400   '#';
+
+===================================================================
+Input1:       var async=require("async");
+Input2:       var format
+Output:       require("util").format;
+Predict[UNK]: require("util").format;
+Predicted:    require("util").format;
+***CORRECT***
+
+===================================================================
+Input1:       var connection=client.serverConfig.connections()[0];
+Input2:       var collection
+Output:       client.collection('test');
+Predict[UNK]: client.findElement('collection.collection.'+')';
+Predicted:    client.findElement('collection.collection.'+')';
+
+===================================================================
+Input1:       var DeviceNameService=_appJsServicesDeviceNameService["default"];
+Input2:       var ShareService
+Output:       _appJsServicesShareService["default"];
+Predict[UNK]: _jsLibHelpers.<UNK>;
+Predicted:    _jsLibHelpers.ShareService;
+
+===================================================================
+Input1:       var ReactFiberInstrumentation=require('ReactFiberInstrumentation');
+Input2:       var ReactFiberReconciler
+Output:       require('ReactFiberReconciler');
+Predict[UNK]: require('<UNK>');
+Predicted:    require('ReactFiberReconciler');
+***CORRECT***
+
+===================================================================
+Input1:       var table=require('text-table');
+Input2:       var through
+Output:       require('through2');
+Predict[UNK]: require('through2');
+Predicted:    require('through2');
+***CORRECT***
+
+===================================================================
+Input1:       var b=bProp:1;
+Input2:       var aSymbol
+Output:       Symbol("aSymbol");
+Predict[UNK]: a:true;
+Predicted:    a:true;
+
+===================================================================
+Input1:       var when=require("when");
+Input2:       var clone
+Output:       require("clone");
+Predict[UNK]: require("clone");
+Predicted:    require("clone");
+***CORRECT***
+
+===================================================================
+Input1:       var renderColumn=functionrenderColumn($row,rows,rowIndex,columns,columnIndex)var className
+Output:       columns[columnIndex].className;
+Predict[UNK]: $<UNK>[0].getElementsByTagName('className')[0];
+Predicted:    $renderColumn[0].getElementsByTagName('className')[0];
+
+===================================================================
+Input1:       var a=Object.create(null);
+Input2:       var b
+Output:       Object.create(null);
+Predict[UNK]: Object.create(null);
+Predicted:    Object.create(null);
+***CORRECT***
+
+===================================================================
+Input1:       var os=require('os');
+Input2:       var request
+Output:       require('request');
+Predict[UNK]: require('request');
+Predicted:    require('request');
+***CORRECT***
+
+===================================================================
+Input1:       var col=wgd.col;
+Input2:       var max_cols
+Output:       this.options.max_cols;
+Predict[UNK]: col.<UNK>;
+Predicted:    col.max_cols;
+
+===================================================================
+Input1:       var handler=this.handler;
+Input2:       var uniquePrefix
+Output:       this.uniquePrefix||'';
+Predict[UNK]: this._<UNK>;
+Predicted:    this._uniquePrefix;
+
+===================================================================
+Input1:       var createEnumType=powerbi.createEnumType;
+Input2:       var SelectionId
+Output:       powerbi.visuals.SelectionId;
+Predict[UNK]: powerbi.visuals.SelectionId;
+Predicted:    powerbi.visuals.SelectionId;
+***CORRECT***
+
+===================================================================
+Input1:       var fontSizeUnit=fontSizeUnit||'10px';
+Input2:       var fontType
+Output:       fontType||'Helvetica';
+Predict[UNK]: '<UNK>'
+Predicted:    'fontType'
+
+===================================================================
+Input1:       var location=_state.location;
+Input2:       var routes
+Output:       _state.routes;
+Predict[UNK]: _state.routes;
+Predicted:    _state.routes;
+***CORRECT***
+
+===================================================================
+Input1:       var execFile=require('child_process').execFilevar PythonFinder
+Output:       configure.test.PythonFinder
+Predict[UNK]: require('child_process').<UNK>
+Predicted:    require('child_process').PythonFinder
+
+===================================================================
+Input1:       var IFD0LengthDataSection=IFDlengths.IFD0LengthDataSection;
+Input2:       var ExifIFDLength
+Output:       IFDlengths.ExifIFDLength;
+Predict[UNK]: <UNK>.<UNK>;
+Predicted:    IFDlengths.ExifIFDLength;
+***CORRECT***
+
+===================================================================
+Input1:       var length=this.length;
+Input2:       var promise
+Output:       this.promise;
+Predict[UNK]: this._promise;
+Predicted:    this._promise;
+
+===================================================================
+Input1:       var numPts=cep.numPts;
+Input2:       var outerPositions
+Output:       cep.outerPositions;
+Predict[UNK]: <UNK>.<UNK>;
+Predicted:    cep.outerPositions;
+***CORRECT***
+
+===================================================================
+Input1:       var editor=this.ui.editor;
+Input2:       var graph
+Output:       editor.graph;
+Predict[UNK]: document.createElement('graph');
+Predicted:    document.createElement('graph');
+
+===================================================================
+Input1:       var dirname=require("path").dirname;
+Input2:       var VFSROOT
+Output:       terminal.VFSROOT;
+Predict[UNK]: require("path").<UNK>;
+Predicted:    require("path").VFSROOT;
+
+===================================================================
+Input1:       var isPlainObject=Lib.isPlainObject;
+Input2:       var isArray
+Output:       Array.isArray;
+Predict[UNK]: Lib.isArray;
+Predicted:    Lib.isArray;
+
+===================================================================
+Input1:       var piece=pieceList[i];
+Input2:       var interval
+Output:       piece.interval;
+Predict[UNK]: <UNK>.interval;
+Predicted:    piece.interval;
+***CORRECT***
+
+===================================================================
+Input1:       var canvas=self.canvas;
+Input2:       var aspectRatio
+Output:       canvas.aspectRatio;
+Predict[UNK]: options.aspectRatio;
+Predicted:    options.aspectRatio;
+
+===================================================================
+Input1:       var media   =Middleware.mediavar validate_name
+Output:       Middleware.validate_name
+Predict[UNK]: <UNK>.<UNK>
+Predicted:    Middleware.validate_name
+***CORRECT***
+
+===================================================================
+Input1:       var jsdocTags=exports.jsdocTags=baseTags;
+Input2:       var closureTags
+Output:       exports.closureTags
+Predict[UNK]: exports.<UNK>   0;
+Predicted:    exports.closureTags   0;
+
+===================================================================
+Input1:       var validator=vdom.validatorvar dom
+Output:       vdom.dom
+Predict[UNK]: vdom.dom
+Predicted:    vdom.dom
+***CORRECT***
+
+===================================================================
+Input1:       var normal_frag="#defineNORMAL\nuniformfloatopacity;
+Input2:       \n#ifdefined(FLAT_SHADED)||defined(USE_BUMPMAP)||defined(USE_NORMALMAP)\n\tvar yingvec3vViewPosition;
+Input2:       \n#endif\n#ifndef
+Output:       "#defineNORMAL\n#ifdefined(FLAT_SHADED)||defined(USE_BUMPMAP)||defined(USE_NORMALMAP)\n\tvar yingvec3vViewPosition;\n#endif\n#ifndefFLAT_SHADED\n\tvar yingvec3vNormal;\n#endif\n#include
+Predict[UNK]: "()||defined(USE_NORMALMAP,"<UNK>");
+Predicted:    "()||defined(USE_NORMALMAP,"\n\tvar ying");
+
+===================================================================
+Input1:       var tr=$('<tr>');
+Input2:       var select
+Output:       $('<select>').attr('class','pe_selectabletime').attr('id',e.prefix+'_from_'+i);
+Predict[UNK]: $('<select>').attr('data-select');
+Predicted:    $('<select>').attr('data-select');
+
+===================================================================
+Input1:       var token=tokens[idx];
+Input2:       var order
+Output:       token.order>1?'start"'+token.order+'"':'';
+Predict[UNK]: token.order;
+Predicted:    token.order;
+
+===================================================================
+Input1:       var zoomFactor=this._constraintsInDip?1:WebInspector.zoomManager.zoomFactor();
+Input2:       var constraints
+Output:       this._sidebarView?this._sidebarView.constraints():newConstraints();
+Predict[UNK]: this._<UNK>(zoomFactor);
+Predicted:    this._constraintsInDip(zoomFactor);
+
+===================================================================
+Input1:       var margin=(style&&resolveBoxStyle('margin',style))||blank;
+Input2:       var padding
+Output:       (style&&resolveBoxStyle('padding',style))||blank;
+Predict[UNK]: ((((style,'padding')||0)-1;
+Predicted:    ((((style,'padding')||0)-1;
+
+===================================================================
+Input1:       var current=$.layerdrag.current;
+Input2:       var data
+Output:       $.data(current.el,'layer-drag');
+Predict[UNK]: $.widget("ui.data",
+Predicted:    $.widget("ui.data",
+
+===================================================================
+Input1:       var radii=defaultValue(options.radii,defaultRadii);
+Input2:       var stackPartitions
+Output:       Math.round(defaultValue(options.stackPartitions,64));
+Predict[UNK]: defaultValue(options.stackPartitions,false);
+Predicted:    defaultValue(options.stackPartitions,false);
+
+===================================================================
+Input1:       var _nn=221;
+Input2:       values[_nn]=_nn;
+Input2:       var _no
+Output:       222;values[_no]   _no;
+Predict[UNK]: 16;values[_no]   _no;
+Predicted:    16;values[_no]   _no;
+
+===================================================================
+Input1:       var row=ace.selection.lead.row;
+Input2:       var i
+Output:       findChunkIndex(this.chunks,row,orig);
+Predict[UNK]: row.id;
+Predicted:    row.id;
+
+===================================================================
+Input1:       var options=this.options;
+Input2:       var rule
+Output:       repeat(options.rule,options.ruleRepetition);
+Predict[UNK]: this.rule;
+Predicted:    this.rule;
+
+===================================================================
+Input1:       var http=require("follow-redirects").http;
+Input2:       var https
+Output:       require("follow-redirects").https;
+Predict[UNK]: require("https");
+Predicted:    require("https");
+
+===================================================================
+Input1:       var droppable=$.ui.droppable;
+Input2:       var selectmenu
+Output:       $.widget("ui.selectmenu",
+Predict[UNK]: $.ui.ui.<UNK>;
+Predicted:    $.ui.ui.selectmenu;
+
+===================================================================
+Input1:       var x=xy.x+Blockly.SNAP_RADIUS*(this.RTL?-1:1);
+Input2:       var y
+Output:       xy.y+Blockly.SNAP_RADIUS*2;
+Predict[UNK]: this.y-this.y*this.y;
+Predicted:    this.y-this.y*this.y;
+
+===================================================================
+Input1:       var url=require('url')var s
+Output:       http.createServer(function(req,res)
+Predict[UNK]: server.createServer()
+Predicted:    server.createServer()
+
+===================================================================
+Input1:       var path=require("path");
+Input2:       var fs
+Output:       require("fs-extra");
+Predict[UNK]: require("fs");
+Predicted:    require("fs");
+
+===================================================================
+Input1:       var x=math.complex(2,3);
+Input2:       var a
+Output:       math.matrix([x]);
+Predict[UNK]: math.expression.node.id;
+Predicted:    math.expression.node.id;
+
+===================================================================
+Input1:       var deepPurpleA700=exports.deepPurpleA700='#6200ea';
+Input2:       var indigo50
+Output:       exports.indigo50   '#e8eaf6';
+Predict[UNK]: exports.<UNK>   '#';
+Predicted:    exports.indigo50   '#';
+
+===================================================================
+Input1:       var parse=require('spdx-expression-parse');
+Input2:       var correct
+Output:       require('spdx-correct');
+Predict[UNK]: require('<UNK>-<UNK>');
+Predicted:    require('spdx-correct');
+***CORRECT***
+
+===================================================================
+Input1:       var typeName=this.transformAny(tree.typeName);
+Input2:       var args
+Output:       this.transformAny(tree.args);
+Predict[UNK]: this.transformAny(tree.args);
+Predicted:    this.transformAny(tree.args);
+***CORRECT***
+
+===================================================================
+Input1:       var isMongooseObject=utils.isMongooseObject;
+Input2:       var inspect
+Output:       require('util').inspect;
+Predict[UNK]: require('inspect.inspect');
+Predicted:    require('inspect.inspect');
+
+===================================================================
+Input1:       var name=enc(elm.name);
+Input2:       var type
+Output:       elm.type.toLowerCase();
+Predict[UNK]: <UNK>.type;
+Predicted:    enc.type;
+
+===================================================================
+Input1:       var crypto=require('crypto')var Stats
+Output:       require('fs').Stats
+Predict[UNK]: require('<UNK>')
+Predicted:    require('Stats')
+
+===================================================================
+Input1:       var parent=this._idToDOMNode[parentId];
+Input2:       var prev
+Output:       this._idToDOMNode[prevId];
+Predict[UNK]: this._prev;
+Predicted:    this._prev;
+
+===================================================================
+Input1:       var fixedRows=this.hot.getSettings().fixedRowsTop;
+Input2:       var countRows
+Output:       this.hot.countRows();
+Predict[UNK]: this.<UNK>.<UNK>();
+Predicted:    this.countRows.countRows();
+
+===================================================================
+Input1:       var fs=require('fs');
+Input2:       var qs
+Output:       require('qs');
+Predict[UNK]: require('qs');
+Predicted:    require('qs');
+***CORRECT***
+
+===================================================================
+Input1:       var sgv=sgvs[sgvsLength-i];
+Input2:       var sensor
+Output:       sensors[sensorsLength-i];
+Predict[UNK]: <UNK>.<UNK>(
+Predicted:    sgv.sensor(
+
+===================================================================
+Input1:       var gulp=require('gulp-help')(require('gulp'));
+Input2:       var glob
+Output:       require('glob');
+Predict[UNK]: require('glob');
+Predicted:    require('glob');
+***CORRECT***
+
+===================================================================
+Input1:       var denodeify=require('denodeify');
+Input2:       var browserify
+Output:       require('browserify');
+Predict[UNK]: require('browserify');
+Predicted:    require('browserify');
+***CORRECT***
+
+===================================================================
+Input1:       var KeyEscapeUtils=require('KeyEscapeUtils');
+Input2:       var traverseAllChildren
+Output:       require('traverseAllChildren');
+Predict[UNK]: require('<UNK>');
+Predicted:    require('traverseAllChildren');
+***CORRECT***
+
+===================================================================
+Input1:       var scale=options.scale!==undefined?options.scale:1;
+Input2:       var snapToPixel
+Output:       options.snapToPixel!   undefined?
+Predict[UNK]: options.<UNK>!   undefined?options.<UNK>:1;
+Predicted:    options.snapToPixel!   undefined?options.snapToPixel:1;
+
+===================================================================
+Input1:       var clone=require("clone");
+Input2:       var when
+Output:       require("when");
+Predict[UNK]: require("when");
+Predicted:    require("when");
+***CORRECT***
+
+===================================================================
+Input1:       var width=chart.canvas.width;
+Input2:       var height
+Output:       chart.canvas.height;
+Predict[UNK]: chart.height.height;
+Predicted:    chart.height.height;
+
+===================================================================
+Input1:       var chai=require('chai');
+Input2:       var should
+Output:       chai.should();
+Predict[UNK]: require('should');
+Predicted:    require('should');
+
+===================================================================
+Input1:       var height=this.root.height;
+Input2:       var width
+Output:       this.root.width;
+Predict[UNK]: this.width;
+Predicted:    this.width;
+
+===================================================================
+Input1:       var item=event.detail.item;
+Input2:       var filter
+Output:       this._filter;
+Predict[UNK]: this._filter;
+Predicted:    this._filter;
+***CORRECT***
+
+===================================================================
+Input1:       var showBackground=label._showBackground&&(text.split('\n').join('').length>0);
+Input2:       var 
+Output:       label._backgroundBillboard;
+Predict[UNK]: label._<UNK>.bind((''));
+Predicted:    label._showBackground.bind((''));
+
+===================================================================
+Input1:       var requestCert=this._requestCert;
+Input2:       var rejectUnauthorized
+Output:       this._rejectUnauthorized;
+Predict[UNK]: this._<UNK>;
+Predicted:    this._rejectUnauthorized;
+***CORRECT***
+
+===================================================================
+Input1:       var firstRetainerIndex=this._firstRetainerIndex;
+Input2:       var retainingNodes
+Output:       this._retainingNodes;
+Predict[UNK]: this._<UNK>;
+Predicted:    this._retainingNodes;
+***CORRECT***
+
+===================================================================
+Input1:       var rowOverscanStopIndex=_ref8.rowOverscanStopIndex;
+Input2:       var rowStartIndex
+Output:       _ref8.rowStartIndex;
+Predict[UNK]: _ref8.rowStartIndex;
+Predicted:    _ref8.rowStartIndex;
+***CORRECT***
+
+===================================================================
+Input1:       var up=scratchCalculateCartesian.up;
+Input2:       var east
+Output:       scratchCalculateCartesian.east;
+Predict[UNK]: up[up];
+Predicted:    up[up];
+
+===================================================================
+Input1:       var commands=imports.commands;
+Input2:       var tabManager
+Output:       imports.tabManager;
+Predict[UNK]: imports.tabManager;
+Predicted:    imports.tabManager;
+***CORRECT***
+
+===================================================================
+Input1:       var Class=Hilo.Class;
+Input2:       var Renderer
+Output:       Hilo.Renderer;
+Predict[UNK]: Hilo.Renderer;
+Predicted:    Hilo.Renderer;
+***CORRECT***
+
+===================================================================
+Input1:       var anchorNode=selection.anchorNode;
+Input2:       var anchorOffset
+Output:       selection.anchorOffset;
+Predict[UNK]: selection.anchorOffset;
+Predicted:    selection.anchorOffset;
+***CORRECT***
+
+===================================================================
+Input1:       var buffers=gltf.buffers;
+Input2:       var bufferViews
+Output:       gltf.bufferViews;
+Predict[UNK]: gltf.bufferViews;
+Predicted:    gltf.bufferViews;
+***CORRECT***
+
+===================================================================
+Input1:       var metadata=imports.metadata;
+Input2:       var installer
+Output:       imports.installer;
+Predict[UNK]: imports.installer;
+Predicted:    imports.installer;
+***CORRECT***
+
+===================================================================
+Input1:       var NoErrorsPlugin=webpack.NoErrorsPlugin;
+Input2:       var optimize
+Output:       webpack.optimize;
+Predict[UNK]: webpack.optimize;
+Predicted:    webpack.optimize;
+***CORRECT***
+
+===================================================================
+Input1:       var node=this.body.nodes[nodeId];
+Input2:       var timestep
+Output:       this.timestep;
+Predict[UNK]: this._.getOption(node.<UNK>);
+Predicted:    this._.getOption(node.timestep);
+
+===================================================================
+Input1:       var leaveClass=data.leaveClass;
+Input2:       var leaveToClass
+Output:       data.leaveToClass;
+Predict[UNK]: data.leaveToClass;
+Predicted:    data.leaveToClass;
+***CORRECT***
+
+===================================================================
+Input1:       var l=this.leftvar r
+Output:       this.right
+Predict[UNK]: this.r
+Predicted:    this.r
+
+===================================================================
+Input1:       var name=target.namevar version
+Output:       target.version
+Predict[UNK]: target.version
+Predicted:    target.version
+***CORRECT***
+
+===================================================================
+Input1:       var db=this._db;
+Input2:       var transaction
+Output:       this._db.transaction(['icons','bookmarks','visits'],'readwrite');
+Predict[UNK]: this._transaction(['transaction'],'readwrite');
+Predicted:    this._transaction(['transaction'],'readwrite');
+
+===================================================================
+Input1:       var add=newOperatorNode('+','add',[a,b]);
+Input2:       var bar
+Output:       newAccessorNode(add,newIndexNode([newConstantNode('bar')]));
+Predict[UNK]: newOperatorNode('+','add',[a,b]);
+Predicted:    newOperatorNode('+','add',[a,b]);
+
+===================================================================
+Input1:       var match=this.matchDimen(dim);
+Input2:       var m
+Output:       parseFloat(match[1]||"1"),unit   match[2];
+Predict[UNK]: this.transform;
+Predicted:    this.transform;
+
+===================================================================
+Input1:       var y=posInfo.cy+parsePercent(offsetCenter[1],posInfo.r);
+Input2:       var width
+Output:       parsePercent(detailModel.get('width'),posInfo.r);
+Predict[UNK]: posInfo.cy+(offsetCenter[0],posInfo.r);
+Predicted:    posInfo.cy+(offsetCenter[0],posInfo.r);
+
+===================================================================
+Input1:       var sid1='sid1',sid2='sid2';
+Input2:       var uid1
+Output:       'uid1',uid2   'uid2',uid3   'uid3';
+Predict[UNK]: '<UNK>';
+Predicted:    'uid1';
+
+===================================================================
+Input1:       var d=newObjectNode(a:newSymbolNode('foo'),b:newConstantNode(2));
+Input2:       var e
+Output:       newObjectNode(a:newSymbolNode('a'));
+Predict[UNK]: newnewnew(a:newSymbolNode('x'),b:newConstantNode(2),newConstantNode(2)
+Predicted:    newnewnew(a:newSymbolNode('x'),b:newConstantNode(2),newConstantNode(2)
+
+===================================================================
+Input1:       var cloud0=cloudLayer.create(200,120,'cloud0');
+Input2:       var cloud1
+Output:       cloudLayer.create(-60,120,'cloud1');
+Predict[UNK]: <UNK>.<UNK>(200,'<UNK>');
+Predicted:    cloudLayer.cloud1(200,'cloud0');
+
+===================================================================
+Input1:       var path=require('path')var debug
+Output:       require('debuglog')('rds')
+Predict[UNK]: require('debug')('socket.io:server')
+Predicted:    require('debug')('socket.io:server')
+
+===================================================================
+Input1:       var head=content.document.getElementsByTagName("head")[0];
+Input2:       var s
+Output:       content.document.createElement('script');
+Predict[UNK]: head.firstChild;
+Predicted:    head.firstChild;
+
+===================================================================
+Input1:       var precision=config.precision+(Math.log(n.toNumber())|0);
+Input2:       var Big
+Output:       type.BigNumber.clone(precision:precision);
+Predict[UNK]: this.);
+Predicted:    this.);
+
+===================================================================
+Input1:       var parent=that._parentWidget();
+Input2:       var focusout
+Output:       isIE?"blur":"focusout";
+Predict[UNK]: that._<UNK>;
+Predicted:    that._focusout;
+
+===================================================================
+Input1:       var Types=keystone.Field.Types;
+Input2:       var Bool
+Output:       newkeystone.List('Boolean',
+Predict[UNK]: newkeystone.List('<UNK>',
+Predicted:    newkeystone.List('Bool',
+
+===================================================================
+Input1:       var net=require('net');
+Input2:       var EventEmitter
+Output:       require('events').EventEmitter;
+Predict[UNK]: require('events').EventEmitter;
+Predicted:    require('events').EventEmitter;
+***CORRECT***
+
+===================================================================
+Input1:       var data=dataArray;
+Input2:       var graph
+Output:       document.getElementById("graph");
+Predict[UNK]: document.getElementById("graph");
+Predicted:    document.getElementById("graph");
+***CORRECT***
+
+===================================================================
+Input1:       var c=fulfillSoon('c',10);
+Input2:       var d
+Output:       fulfillSoon('d',20);
+Predict[UNK]: rejectSoon('rejected-d',20);
+Predicted:    rejectSoon('rejected-d',20);
+
+===================================================================
+Input1:       var yargs=require('yargs');
+Input2:       var zip
+Output:       require('gulp-zip');
+Predict[UNK]: require('gulp-zip');
+Predicted:    require('gulp-zip');
+***CORRECT***
+
+===================================================================
+Input1:       var mkpath=require('mkpath');
+Input2:       var resolve
+Output:       require('path').resolve;
+Predict[UNK]: require('resolve');
+Predicted:    require('resolve');
+
+===================================================================
+Input1:       var amber500=exports.amber500='#ffc107';
+Input2:       var amber600
+Output:       exports.amber600   '#ffb300';
+Predict[UNK]: exports.<UNK>   '#';
+Predicted:    exports.amber600   '#';
+
+===================================================================
+Input1:       var mkdirp   =require('mkdirp');
+Input2:       var jas
+Output:       require('jasmine-node');
+Predict[UNK]: require('<UNK>');
+Predicted:    require('jas');
+
+===================================================================
+Input1:       var teal600=exports.teal600='#00897b';
+Input2:       var teal700
+Output:       exports.teal700   '#00796b';
+Predict[UNK]: exports.<UNK>   '#';
+Predicted:    exports.teal700   '#';
+
+===================================================================
+Input1:       var script=document.querySelector('script[src*="'+fileName+'"]');
+Input2:       var src
+Output:       script.attributes.src.value;
+Predict[UNK]: document._('script-src');
+Predicted:    document._('script-src');
+
+===================================================================
+Input1:       var ClassExpression=traceur.syntax.trees.ClassExpression;
+Input2:       var CommaExpression
+Output:       traceur.syntax.trees.CommaExpression;
+Predict[UNK]: traceur.syntax.trees.<UNK>;
+Predicted:    traceur.syntax.trees.CommaExpression;
+***CORRECT***
+
+===================================================================
+Input1:       var fromPoint=jsCommon.PixelConverter.fromPoint;
+Input2:       var LabelTextProperties
+Output:       powerbi.visuals.dataLabelUtils.LabelTextProperties;
+Predict[UNK]: visuals.dataLabelUtils.<UNK>;
+Predicted:    visuals.dataLabelUtils.LabelTextProperties;
+
+===================================================================
+Input1:       var object=_react.PropTypes.object;
+Input2:       var arrayOf
+Output:       _react.PropTypes.arrayOf;
+Predict[UNK]: __.<UNK>;
+Predicted:    __.arrayOf;
+
+===================================================================
+Input1:       var read=require('file-reader');
+Input2:       var fs
+Output:       require('fs');
+Predict[UNK]: require('fs');
+Predicted:    require('fs');
+***CORRECT***
+
+===================================================================
+Input1:       var BatchedBridge=require('BatchedBridge');
+Input2:       var React
+Output:       require('React');
+Predict[UNK]: require('React');
+Predicted:    require('React');
+***CORRECT***
+
+===================================================================
+Input1:       var debug=require('debug')('marionette:tcp');
+Input2:       var net
+Output:       require('net');
+Predict[UNK]: require('net');
+Predicted:    require('net');
+***CORRECT***
+
+===================================================================
+Input1:       var chai=require('chai');
+Input2:       var sinon
+Output:       require('sinon');
+Predict[UNK]: require('sinon');
+Predicted:    require('sinon');
+***CORRECT***
+
+===================================================================
+Input1:       var http=require("http");
+Input2:       var send
+Output:       require("send");
+Predict[UNK]: require("send");
+Predicted:    require("send");
+***CORRECT***
+
+===================================================================
+Input1:       var enableDoublecheck=!!options.enableDoublecheck;
+Input2:       var overwriteExistingToken
+Output:       !!options.overwriteExistingToken;
+Predict[UNK]: !!options.<UNK>;
+Predicted:    !!options.overwriteExistingToken;
+***CORRECT***
+
+===================================================================
+Input1:       var box=this.dom.box;
+Input2:       var line
+Output:       this.dom.line;
+Predict[UNK]: this.dom.line;
+Predicted:    this.dom.line;
+***CORRECT***
+
+===================================================================
+Input1:       var values=catDv.values;
+Input2:       var columns
+Output:       dataView.metadata.columns;
+Predict[UNK]: values[0];
+Predicted:    values[0];
+
+===================================================================
+Input1:       var l=lines.length;
+Input2:       var row
+Output:       delta.start.row;
+Predict[UNK]: lines.row;
+Predicted:    lines.row;
+
+===================================================================
+Input1:       var tube=options.tube||0.5;
+Input2:       var radialSegments
+Output:       options.radialSegments||32;
+Predict[UNK]: options.radialSegments||false;
+Predicted:    options.radialSegments||false;
+
+===================================================================
+Input1:       var w=imageData.width|0;
+Input2:       var h
+Output:       imageData.height|0;
+Predict[UNK]: this.height;
+Predicted:    this.height;
+
+===================================================================
+Input1:       var assert=require('assert')var async
+Output:       require('async')
+Predict[UNK]: require('async')
+Predicted:    require('async')
+***CORRECT***
+
+===================================================================
+Input1:       var elements=this._elements;
+Input2:       var chunkManager
+Output:       this._chunkManager;
+Predict[UNK]: this._<UNK>;
+Predicted:    this._chunkManager;
+***CORRECT***
+
+===================================================================
+Input1:       var ARRAY_LITERAL='ARRAY_LITERAL';
+Input2:       var ARRAY_PATTERN
+Output:       'ARRAY_PATTERN';
+Predict[UNK]: 'ARRAY_PATTERN';
+Predicted:    'ARRAY_PATTERN';
+***CORRECT***
+
+===================================================================
+Input1:       var columnCount=props.columnCount;
+Input2:       var scrollToAlignment
+Output:       props.scrollToAlignment;
+Predict[UNK]: props.scrollToAlignment;
+Predicted:    props.scrollToAlignment;
+***CORRECT***
+
+===================================================================
+Input1:       var weekNumberCalculation=opts.weekNumberCalculation;
+Input2:       var firstDay
+Output:       opts.firstDay;
+Predict[UNK]: opts.<UNK>;
+Predicted:    opts.firstDay;
+***CORRECT***
+
+===================================================================
+Input1:       var scope=$timepicker.$scope;
+Input2:       var lang
+Output:       options.lang;
+Predict[UNK]: $$.$$$(
+Predicted:    $$.$$$(
+
+===================================================================
+Input1:       var p=a.opaque;
+Input2:       var b
+Output:       a.mb_w;
+Predict[UNK]: a.max_length;
+Predicted:    a.max_length;
+
+===================================================================
+Input1:       var copy=functioncopy(copiedValue)var len
+Output:       refFrom.length;
+Predict[UNK]: arguments.length>>>0;
+Predicted:    arguments.length>>>0;
+
+===================================================================
+Input1:       var ViewManagement=Windows.UI.ViewManagement;
+Input2:       var ApplicationView
+Output:       ViewManagement.ApplicationView;
+Predict[UNK]: Windows.UI.<UNK>;
+Predicted:    Windows.UI.ApplicationView;
+
+===================================================================
+Input1:       var vDiff  =this.vDiff;
+Input2:       var impulse1
+Output:       this.impulse1;
+Predict[UNK]: this.<UNK>;
+Predicted:    this.impulse1;
+***CORRECT***
+
+===================================================================
+Input1:       var createNewExpression=ParseTreeFactory.createNewExpression;
+Input2:       var createNumberLiteral
+Output:       ParseTreeFactory.createNumberLiteral;
+Predict[UNK]: ParseTreeFactory.createNumberLiteral;
+Predicted:    ParseTreeFactory.createNumberLiteral;
+***CORRECT***
+
+===================================================================
+Input1:       var eventId=result.eventId;
+Input2:       var calendarId
+Output:       result.calendarId;
+Predict[UNK]: result.<UNK>;
+Predicted:    result.calendarId;
+***CORRECT***
+
+===================================================================
+Input1:       var index=replica.index;
+Input2:       var shard
+Output:       replica.shard;
+Predict[UNK]: this.<UNK>;
+Predicted:    this.shard;
+
+===================================================================
+Input1:       var compile=ref.compile;
+Input2:       var compileToFunctions
+Output:       ref.compileToFunctions;
+Predict[UNK]: ref.<UNK>;
+Predicted:    ref.compileToFunctions;
+***CORRECT***
+
+===================================================================
+Input1:       var afterEach=mocha.afterEachvar describe
+Output:       mocha.describe
+Predict[UNK]: mocha.describe
+Predicted:    mocha.describe
+***CORRECT***
+
+===================================================================
+Input1:       var audio=element.find("audio"),audio_obj=audio[0];
+Input2:       var controls
+Output:       element.find('.controls'),volume_button   controls.find('.volume');
+Predict[UNK]: audio.find("select"),
+Predicted:    audio.find("select"),
+
+===================================================================
+Input1:       var a=Object.create(null);
+Input2:       var b
+Output:       Object.create(null);b.x   1;b.y   2;
+Predict[UNK]: Object.create(null);
+Predicted:    Object.create(null);
+
+===================================================================
+Input1:       var c=o.content;
+Input2:       var content
+Output:       this.element.children('.window-content');
+Predict[UNK]: o.content;
+Predicted:    o.content;
+
+===================================================================
+Input1:       var rot=CesiumMath.zeroToTwoPi(alphaDeltaW.rotation);
+Input2:       var quat
+Output:       Quaternion.fromAxisAngle(Cartesian3.UNIT_Z,rot,quatScratch);
+Predict[UNK]: <UNK>.<UNK>(<UNK>.<UNK>);
+Predicted:    alphaDeltaW.zeroToTwoPi(alphaDeltaW.quat);
+
+===================================================================
+Input1:       var sunrise=newDate(data.sys.sunrise*1000);
+Input2:       var sunset
+Output:       newDate(data.sys.sunset*1000);
+Predict[UNK]: newDate(data.<UNK>.<UNK>()*1000;
+Predicted:    newDate(data.sunset.sunset()*1000;
+
+===================================================================
+Input1:       var each=require('each');
+Input2:       var integration
+Output:       require('analytics.js-integration');
+Predict[UNK]: require('analytics.js-integration');
+Predicted:    require('analytics.js-integration');
+***CORRECT***
+
+===================================================================
+Input1:       var Event=db.model('gh4073_3',EventSchema);
+Input2:       var UserEvent
+Output:       Event.discriminator('User4073',UserEventSchema);
+Predict[UNK]: db.model('<UNK>',
+Predicted:    db.model('UserEvent',
+
+===================================================================
+Input1:       var watched=!this.model.get('watched');
+Input2:       var imdb
+Output:       this.model.get('imdb_id');
+Predict[UNK]: $(this.element.get('<UNK>'));
+Predicted:    $(this.element.get('watched'));
+
+===================================================================
+Input1:       var interval=self.options.interval;
+Input2:       var slidershowTimer
+Output:       slider.getAttribute('data-slidershowTimer');
+Predict[UNK]: interval.options.<UNK>;
+Predicted:    interval.options.slidershowTimer;
+
+===================================================================
+Input1:       var width=image.width,height=image.height;
+Input2:       var maskCanvas
+Output:       this.cachedCanvases.getCanvas('maskCanvas',
+Predict[UNK]: image.<UNK>;
+Predicted:    image.maskCanvas;
+
+===================================================================
+Input1:       var d=newDeferred();
+Input2:       var t
+Output:       newDate().getTime();
+Predict[UNK]: this._displayables.t.t;
+Predicted:    this._displayables.t.t;
+
+===================================================================
+Input1:       var altKey=defaultValue(options.altKey,false);
+Input2:       var shiftKey
+Output:       defaultValue(options.shiftKey,false);
+Predict[UNK]: defaultValue(options.shiftKey,false);
+Predicted:    defaultValue(options.shiftKey,false);
+***CORRECT***
+
+===================================================================
+Input1:       var user=db.collection('user');
+Input2:       var blogpost
+Output:       db.collection('blogpost');
+Predict[UNK]: user.<UNK>();
+Predicted:    user.blogpost();
+
+===================================================================
+Input1:       var path=require('path');
+Input2:       var session
+Output:       require('express-session');
+Predict[UNK]: require('express-session');
+Predicted:    require('express-session');
+***CORRECT***
+
+===================================================================
+Input1:       var newChild=unwrap(newChildWrapper);
+Input2:       var refChild
+Output:       refChildWrapper?unwrap(refChildWrapper):null;
+Predict[UNK]: unwrap(<UNK>);
+Predicted:    unwrap(newChildWrapper);
+
+===================================================================
+Input1:       var SymbolNode=math.expression.node.SymbolNode;
+Input2:       var AssignmentNode
+Output:       math.expression.node.AssignmentNode;
+Predict[UNK]: math.expression.node.AssignmentNode;
+Predicted:    math.expression.node.AssignmentNode;
+***CORRECT***
+
+===================================================================
+Input1:       var getHostComponentFromComposite=require('getHostComponentFromComposite');
+Input2:       var instantiateReactComponent
+Output:       require('instantiateReactComponent');
+Predict[UNK]: require('<UNK>');
+Predicted:    require('instantiateReactComponent');
+***CORRECT***
+
+===================================================================
+Input1:       var width=this._image.width;
+Input2:       var height
+Output:       this._image.height;
+Predict[UNK]: this._height;
+Predicted:    this._height;
+
+===================================================================
+Input1:       var a=this._a|0var b
+Output:       this._b|0
+Predict[UNK]: this._b|0
+Predicted:    this._b|0
+***CORRECT***
+
+===================================================================
+Input1:       var WebSocketError=Windows.Networking.Sockets.WebSocketError;
+Input2:       var WebErrorStatus
+Output:       Windows.Web.WebErrorStatus;
+Predict[UNK]: Windows.<UNK>.<UNK>.<UNK>.<UNK>.<UNK>.<UNK>;
+Predicted:    Windows.Networking.Sockets.WebErrorStatus.WebErrorStatus.WebErrorStatus.WebErrorStatus;
+
+===================================================================
+Input1:       var getName=options.getName;
+Input2:       var defaultParallel
+Output:       options.defaultParallel||false;
+Predict[UNK]: options.<UNK>;
+Predicted:    options.defaultParallel;
+
+===================================================================
+Input1:       var y=e.gesture.center.y;
+Input2:       var velocityX
+Output:       e.gesture.velocityX;
+Predict[UNK]: e.center.velocityX;
+Predicted:    e.center.velocityX;
+
+===================================================================
+Input1:       var ParseTreeFactory=traceur.codegeneration.ParseTreeFactory;
+Input2:       var VariableBinder
+Output:       traceur.semantics.VariableBinder;
+Predict[UNK]: traceur.codegeneration.generator.<UNK>;
+Predicted:    traceur.codegeneration.generator.VariableBinder;
+
+===================================================================
+Input1:       var STATUS_SYNC_ERROR=exports.STATUS_SYNC_ERROR  =4;
+Input2:       var STATUS_RELOADING
+Output:       exports.STATUS_RELOADING    5;
+Predict[UNK]: exports.<UNK>   3;
+Predicted:    exports.STATUS_RELOADING   3;
+
+===================================================================
+Input1:       var directory=document.getElementById("directory");
+Input2:       var tcpServer
+Output:       chrome.sockets.tcpServer;
+Predict[UNK]: document.getElementById("<UNK>");
+Predicted:    document.getElementById("tcpServer");
+
+===================================================================
+Input1:       var TokenType=traceur.syntax.TokenType;
+Input2:       var StringBuilder
+Output:       traceur.util.StringBuilder;
+Predict[UNK]: traceur.semantics.symbols.<UNK>;
+Predicted:    traceur.semantics.symbols.StringBuilder;
+
+===================================================================
+Input1:       var current=formatTagNumber(currentVersion);
+Input2:       var latest
+Output:       formatTagNumber(latestVersion);
+Predict[UNK]: <UNK>(<UNK>);
+Predicted:    formatTagNumber(currentVersion);
+
+===================================================================
+Input1:       var isOpened=_props.isOpened;
+Input2:       var keepCollapsedContent
+Output:       _props.keepCollapsedContent;
+Predict[UNK]: _props.<UNK>;
+Predicted:    _props.keepCollapsedContent;
+***CORRECT***
+
+===================================================================
+Input1:       var message=_ref5.message;
+Input2:       var assert
+Output:       _ref5.assert;
+Predict[UNK]: _ref5.assert;
+Predicted:    _ref5.assert;
+***CORRECT***
+
+===================================================================
+Input1:       var char=text[charNum];
+Input2:       var charWidth
+Output:       charWidths[charNum];
+Predict[UNK]: <UNK>[<UNK>];
+Predicted:    char[char];
+
+===================================================================
+Input1:       var fields=this.fields=;
+Input2:       var paths
+Output:       this.paths   ;
+Predict[UNK]: this.paths   fields.paths;
+Predicted:    this.paths   fields.paths;
+
+===================================================================
+Input1:       var minLines=this._minLines;
+Input2:       var exceptConditionals
+Output:       this._exceptConditionals;
+Predict[UNK]: this._<UNK>;
+Predicted:    this._exceptConditionals;
+***CORRECT***
+
+===================================================================
+Input1:       var authority=_ref.authority;
+Input2:       var client_id
+Output:       _ref.client_id;
+Predict[UNK]: _ref.<UNK>;
+Predicted:    _ref.client_id;
+***CORRECT***
+
+===================================================================
+Input1:       var mnc=this._iccCard.iccInfo.mnc||'00';
+Input2:       var iccId
+Output:       this._iccId;
+Predict[UNK]: this._<UNK>.iccInfo.mnc||'default';
+Predicted:    this._iccCard.iccInfo.mnc||'default';
+
+===================================================================
+Input1:       var autoHeight=_props4.autoHeight;
+Input2:       var className
+Output:       _props4.className;
+Predict[UNK]: _props4.className;
+Predicted:    _props4.className;
+***CORRECT***
+
+===================================================================
+Input1:       var limit=this._limit;
+Input2:       var values
+Output:       this._values;
+Predict[UNK]: this._values;
+Predicted:    this._values;
+***CORRECT***
+
+===================================================================
+Input1:       var sortBy=sorterAndOrder.sortBy;
+Input2:       var isAsc
+Output:       sorterAndOrder.isAsc;
+Predict[UNK]: <UNK>.<UNK>;
+Predicted:    sorterAndOrder.isAsc;
+***CORRECT***
+
+===================================================================
+Input1:       var x=gridline.x;
+Input2:       var y
+Output:       gridline.y;
+Predict[UNK]: <UNK>.y;
+Predicted:    gridline.y;
+***CORRECT***
+
+===================================================================
+Input1:       var canvas=document.createElement('canvas');
+Input2:       var height
+Output:       img.height,
+Predict[UNK]: document.getElementById('height');
+Predicted:    document.getElementById('height');
+
+===================================================================
+Input1:       var stripBuffered=options.stripBuffered===true;
+Input2:       var filename
+Output:       options.filename;
+Predict[UNK]: options.filename   function()
+Predicted:    options.filename   function()
+
+===================================================================
+Input1:       var opt=options[i];
+Input2:       var value
+Output:       opt.value;
+Predict[UNK]: this.value;
+Predicted:    this.value;
+
+===================================================================
+Input1:       var field=this.options.field;
+Input2:       var FIELDS
+Output:       VectorField.FIELDS;
+Predict[UNK]: this._<UNK>.field;
+Predicted:    this._FIELDS.field;
+
+===================================================================
+Input1:       var data=options.data;
+Input2:       var headers
+Output:       options.headers;
+Predict[UNK]: options.headers;
+Predicted:    options.headers;
+***CORRECT***
+
+===================================================================
+Input1:       var timestamp=_options$timestamp===undefined?true:_options$timestamp;
+Input2:       var transformer
+Output:       options.transformer;
+Predict[UNK]: _ref.transformer;
+Predicted:    _ref.transformer;
+
+===================================================================
+Input1:       var s=list[j]var t
+Output:       list[j+1]
+Predict[UNK]: s.call(this,s)
+Predicted:    s.call(this,s)
+
+===================================================================
+Input1:       var period  =options.period;
+Input2:       var dampingRatio
+Output:       options.dampingRatio;
+Predict[UNK]: options.<UNK>;
+Predicted:    options.dampingRatio;
+***CORRECT***
+
+===================================================================
+Input1:       var noop  =angular.noop;
+Input2:       var extend
+Output:       angular.extend;
+Predict[UNK]: angular.extend;
+Predicted:    angular.extend;
+***CORRECT***
+
+===================================================================
+Input1:       var data=this.data;
+Input2:       var position
+Output:       data.position;
+Predict[UNK]: this._position;
+Predicted:    this._position;
+
+===================================================================
+Input1:       var name=data.name;
+Input2:       var parent
+Output:       data.parent;
+Predict[UNK]: data.parent;
+Predicted:    data.parent;
+***CORRECT***
+
+===================================================================
+Input1:       var staff=utils.staffvar expose
+Output:       utils.expose
+Predict[UNK]: utils.expose
+Predicted:    utils.expose
+***CORRECT***
